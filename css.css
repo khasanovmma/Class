@@ -26,6 +26,7 @@ a {
     text-align: center;
 }
 .header__nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,8 +36,30 @@ a {
     z-index: 1;
 }
 .header__menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
+    justify-content: space-between;
+    display: none;
+    background: #000;
 }
+
+.header__menu.active {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.btn-close {
+    font-size: 26px;
+    color: #EEEEEE;
+}
+
 .header__menu-link, .header__logo {
     color: #EEEEEE;
     text-transform: uppercase;

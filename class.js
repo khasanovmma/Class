@@ -107,11 +107,27 @@ class Runner {
     this.ele.addEventListener('mouseover', () => {
       this.ele.style.margin = `${randomNum()}px ${randomNum()}px ${randomNum()}px ${randomNum()}px`
     })
+    
+    this.linkMenu = document.querySelector(hover.linkMenu)
+    this.linkMenu.style = ` height: 100vh;
+                            width: 50%; `
 
+    this.openBtn = document.querySelector(hover.openBtn)
+    this.closeBtn = document.querySelector(hover.closeBtn)
+
+    this.openBtn.addEventListener('click', () => {
+        this.linkMenu.classList.add('active')
+    })
+    this.closeBtn.addEventListener('click', () => {
+      this.linkMenu.classList.remove('active')
+  })
   }
 }
 
 const content = new Runner({
   ele: '.header__content',
+  linkMenu: '.header__menu',
+  openBtn: ".btn-open",
+  closeBtn: ".btn-close"
 })
 
